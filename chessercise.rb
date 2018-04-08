@@ -3,15 +3,16 @@ require './lib/chess'
 require './lib/chess_helper'
 
 require 'pry'
-
+ARGV << '-h' if ARGV.empty?
 # This will hold the options we parse
 options = {}
 
 OptionParser.new do |parser|
-  parser.banner = "Usage: chessercise.rb [options]"
+  parser.banner = "Usage: ruby chessercise.rb [options]"
 
   parser.on("-h", "--help", "Help for this chessercise") do | |
     puts parser
+    exit
   end
   # Whenever we see -n or --piece, with an 
   # argument, save the argument.
@@ -27,12 +28,13 @@ end.parse!
 
 select_position = options[:position]
 select_piece = options[:piece]
-select_piece.upcase!
+select_piece&.upcase! 
 available_pieces = "ROOK, QUEEN, KNIGHT"
 
 #Setup Board, Player and pieces
 # Render chess table for user input
 initialize_game
+
 
 
 # Validate User Input in right and range format
@@ -58,7 +60,14 @@ if piece_validate(available_pieces, select_piece) && position_validate(select_po
 else
   # Errors at user input from validation pieces and position
   puts "Error: "
-  puts 'Please enter in format piece, position eg: QUEEN, d2'
+  puts 'Please enter in format piece, position eg: Rook, d2'
   puts '$ promt: ruby chessercise.rb -p Rook -c d2'
+  puts 'or'
+  puts '$ promt: ruby chessercise.rb --piece ROOK --position d2'
+  puts 'Usage: chessercise.rb [options]'
+  puts '  -h, --help                       Help for this chessercise'
+  puts '  -p, --piece PIECE                The chess piece eg: ROOK,QUEEN, KNIGHT.'
+  puts '  -c, --position POSITION          The position eg: d2'
+
 end
 

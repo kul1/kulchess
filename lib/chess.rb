@@ -11,6 +11,8 @@ class Chess
     @player2 = player2
     @current_player = @player1
     @board = Board.new
+    # To setup all start up piece on chess board
+    # Un-comment line below
     @board.setup
   end
 

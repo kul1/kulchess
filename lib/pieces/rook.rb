@@ -11,9 +11,9 @@ class Rook < Piece
 
   def to_s
     if faction == :white
-      "\u2656"
+      " \u2656 "
     else
-      "\u265c"
+      " \u265c "
     end
   end
 

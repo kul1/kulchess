@@ -6,7 +6,11 @@ class Board
 
   def initialize
     @turn = :white
-    @grid = Array.new(8) {Array.new(8, '   ')}
+    #@grid = Array.new(8) {Array.new(8, '   ')}
+    @grid = Array.new(8) {Array.new(8, "   ")}
+
+    #@grid = Array.new(10) {Array.new(10, '   ')}
+    
     @dead_pieces = []
   end
 
@@ -45,12 +49,16 @@ class Board
   end
 
   def generate_castle_pieces(faction)
+    # generated for game
     # castle_pieces = [
     #   Rook.new(faction), Rook.new(faction), Knight.new(faction), Bishop.new(faction),
     #   Queen.new(faction), King.new(faction), Bishop.new(faction),
     #   Knight.new(faction), Rook.new(faction)
     # ]
-    castle_pieces = [Rook.new(faction)]
+
+    # generated for chessercise only
+    # disable below for fully support game
+    castle_pieces = [Rook.new(faction), Queen.new(faction)]
     castle_pieces
   end
 
@@ -65,10 +73,10 @@ class Board
     #pawns = generate_pawns(faction)
     if faction == :white
       place_row(0, castle_pieces)
-      #place_row(1, pawns)
+    #  place_row(1, pawns)
     else
       place_row(7, castle_pieces)
-      #place_row(6, pawns)
+    #  place_row(6, pawns)
     end
   end
 

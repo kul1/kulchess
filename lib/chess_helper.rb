@@ -42,10 +42,14 @@ module ChessHelper
   end
 
   def piece_validate(pieces, piece)
-    if pieces.include?(piece)
-      true
-    else
-      false
+    #if user not enter option piece 
+    #if !piece.nil?
+    unless piece.nil?
+      if pieces.include?(piece)
+        true
+      else
+        false
+      end
     end
   end
 

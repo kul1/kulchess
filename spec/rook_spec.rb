@@ -7,6 +7,7 @@ include ChessHelper
 describe Rook do
   subject do
     rook = Rook.new(:white)
+    #rook at c4
     rook.position = [2, 3]
     rook
   end

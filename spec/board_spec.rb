@@ -55,9 +55,9 @@ describe Board do
         expect(subject.grid[1][3]).not_to equal(rook)
       end
 
-      it 'should return algebraic notation of chess board position' do
+      it 'should return algebraic notation of chess board position [1,1 as b2' do
         # expect(subject.cell_map(rook.position)).to eq('b2')
-        expect(cell_map(rook.position)).to eq('b3')
+        expect(cell_map(rook.position)).to eq('b2')
       end
     end
 
