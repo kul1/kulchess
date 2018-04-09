@@ -4,7 +4,7 @@ require './lib/chess'
 require './lib/chess_helper'
 
 require 'pry'
-ARGV << '-h' if ARGV.empty?
+#ARGV << '-h' if ARGV.empty?
 
 # This will hold the options we parse
 options = {}
@@ -26,6 +26,13 @@ OptionParser.new do |parser|
     options[:position] = p
 
   end
+  # This will check if user have bot options
+  
+  unless options[:piece] && options[:position]
+    ARGV << '-h'
+  end
+
+
 end.parse!
 
 select_position = options[:position]
