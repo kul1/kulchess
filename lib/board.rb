@@ -50,18 +50,20 @@ class Board
   end
 
   def generate_selected_piece(piece,position)  
-
+    # To generate data for render in chessercise
     d_col, d_row = position
     @grid[d_row][d_col] = piece
     @grid
 
-    #map all path with grid
+    # map all path with grid
     piece.all_paths.each do | d_col, d_row|
       @grid[d_row][d_col] = piece.to_spot 
     end
+
   end
 
   def generate_castle_pieces(faction)
+    # work on progress
     # generated for game
     # castle_pieces = [
     #   Rook.new(faction), Rook.new(faction), Knight.new(faction), Bishop.new(faction),
@@ -82,8 +84,9 @@ class Board
   end
 
   def setup_faction(faction)
+    # work on progress
     castle_pieces = generate_castle_pieces(faction)
-    #pawns = generate_pawns(faction)
+    # pawns = generate_pawns(faction)
     if faction == :white
     #  place_row(0, castle_pieces)
     #  place_row(1, pawns)
