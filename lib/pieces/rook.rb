@@ -9,6 +9,7 @@ class Rook < Piece
     @name = 'Rook'
   end
 
+  # define unicode char for chess piece
   def to_s
     if faction == :white
       " \u2656 "

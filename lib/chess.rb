@@ -1,9 +1,8 @@
 require_relative 'board'
 require_relative 'player'
-
-require 'pp'
 require './lib/chess_helper'
 include ChessHelper
+
 class Chess
 
   def initialize(player1, player2)
@@ -18,7 +17,6 @@ class Chess
 
   def start
     @board.render
-
   end
 
 end

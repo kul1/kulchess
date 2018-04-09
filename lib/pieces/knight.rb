@@ -29,7 +29,6 @@ class Knight < Piece
     moves.include?(coordinates) ? true : false
   end
 
-
   def character_paths
     moves = valid_moves
   end
@@ -38,10 +37,7 @@ class Knight < Piece
     moves = valid_moves
   end
 
-
-  
-
-  # define chess character 
+  # define unicode char for chess piece
   def to_s
     if faction == :white
       " \u2658 "

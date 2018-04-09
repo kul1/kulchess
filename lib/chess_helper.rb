@@ -1,6 +1,7 @@
 module ChessHelper
-
+  # Initialize in game mode (not chessercise)
   def initialize_game
+    # work on progress
     name = "Player 1"
     name2 = "Player 2"
     game = Chess.new(Player.new(name, :white), Player.new(name2, :black))
@@ -14,6 +15,8 @@ module ChessHelper
   end
 
   def chess_path(path)
+    # path from allpath => [[2, 3], [4, 3], [1, 0], [1, 2], [5, 0], [5, 2]]
+    # return [c4, e4, b1, b3, f1, f3]
     coordinates = []
     path.each do |position|
       possible_cells = cell_map(position)
@@ -23,6 +26,7 @@ module ChessHelper
   end
 
   def convert_response(move)
+    # work on progress
     coordinates = []
     letters = %w[a b c d e f g h]
     move.tr('-', '').chars.each_slice(2) do |coor_pair|
@@ -52,6 +56,5 @@ module ChessHelper
       end
     end
   end
-
 
 end

@@ -1,7 +1,6 @@
 require 'pieces/knight'
 require 'pry'
 require 'chess_helper'
-
 include ChessHelper
 
 describe Knight do
@@ -26,7 +25,7 @@ describe Knight do
     end
   end
 
-    context 'starting position is at [1, 0]' do
+    context 'move from start position [1, 0]' do
       before do
         subject.position = [1, 0]
       end
@@ -36,13 +35,11 @@ describe Knight do
       end
     end
 
-
   describe '#find possible_move' do
     it 'return algebraic notation of chess board position' do
       expect_path = ["d3", "d5", "e2", "e6", "g2", "g6", "h3", "h5"]
       expect(chess_path(subject.all_paths)).to match_array(expect_path)
     end
   end
-
 
 end

@@ -9,14 +9,16 @@ class Piece
     @position = nil
   end
 
-  # def valid_move
-  # 	return []
-  # end
-
-  # def character_paths
-  # 	return []
-  # end
-
+  # define unicode char for selected piece
+  def to_spot
+    # Marker in chessercise
+    # "spacing \uxxxx spacing" must equal to grid
+    if faction == :white
+      " \u2714 "
+    else
+      " \u2606 "
+    end
+  end
 
   def find_destination_path(destination)
     # This is path of possible destination regardless how it move

@@ -11,7 +11,7 @@ class Queen < Piece
     @position = nil
   end
 
-  # define chess character 
+  # define unicode char for chess piece
   def to_s
     if faction == :white
       " \u2655 "

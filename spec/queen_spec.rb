@@ -1,7 +1,6 @@
 require 'pieces/queen'
 require 'pry'
 require 'chess_helper'
-
 include ChessHelper
 
 describe Queen do
@@ -85,6 +84,5 @@ describe Queen do
       expect(chess_path(subject.all_paths)).to match_array(expect_path)
     end
   end
-
 
 end

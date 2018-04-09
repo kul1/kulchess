@@ -25,3 +25,13 @@ It will display output as:
 For help enter
 >$ ruby chessercise.rb -h
 
+
+
+##Sample screen shot:
+
+![knight_path](https://user-images.githubusercontent.com/3953832/38479855-949033dc-3b87-11e8-96ef-8f0bd81cbc7d.png)
+
+![rook_path](https://user-images.githubusercontent.com/3953832/38479864-9a23c908-3b87-11e8-82a8-b526b82d8fd2.png)
+
+![queen_path](https://user-images.githubusercontent.com/3953832/38479861-980ec370-3b87-11e8-917f-4f0d51833fbb.png)
+

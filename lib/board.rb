@@ -1,4 +1,5 @@
 Dir[File.dirname(__FILE__) + '/pieces/*.rb'].each {|file| require file}
+require 'pry'
 
 # Stores piece objects on a grid and renders board
 class Board
@@ -48,6 +49,18 @@ class Board
 ------------------------------}
   end
 
+  def generate_selected_piece(piece,position)  
+
+    d_col, d_row = position
+    @grid[d_row][d_col] = piece
+    @grid
+
+    #map all path with grid
+    piece.all_paths.each do | d_col, d_row|
+      @grid[d_row][d_col] = piece.to_spot 
+    end
+  end
+
   def generate_castle_pieces(faction)
     # generated for game
     # castle_pieces = [
@@ -72,10 +85,10 @@ class Board
     castle_pieces = generate_castle_pieces(faction)
     #pawns = generate_pawns(faction)
     if faction == :white
-      place_row(0, castle_pieces)
+    #  place_row(0, castle_pieces)
     #  place_row(1, pawns)
     else
-      place_row(7, castle_pieces)
+    #  place_row(7, castle_pieces)
     #  place_row(6, pawns)
     end
   end

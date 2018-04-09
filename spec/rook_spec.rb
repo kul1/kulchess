@@ -1,7 +1,6 @@
 require 'pieces/rook'
 require 'pry'
 require 'chess_helper'
-
 include ChessHelper
 
 describe Rook do
@@ -38,7 +37,6 @@ describe Rook do
       it 'return an array of path down to destination' do
         expect_path = [[2, 2], [2, 1]]
         expect(subject.find_destination_path([2, 0])).to match_array(expect_path)
-
       end
     end
 
@@ -46,7 +44,6 @@ describe Rook do
       it 'return an array of path up to destination' do
         expect_path = [[2, 4], [2, 5], [2, 6]]
         expect(subject.find_destination_path([2, 7])).to match_array(expect_path)
-
       end
     end
 
@@ -67,6 +64,5 @@ describe Rook do
       expect(chess_path(subject.all_paths)).to match_array(expect_path)
     end
   end
-
 
 end
