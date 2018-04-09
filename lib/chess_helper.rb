@@ -38,11 +38,15 @@ module ChessHelper
   end
 
   def position_validate(position)
-    if position.match(/^([a-h]+[1-8])/)
-      true
-    else
-      false
+    unless position.nil?
+      if position.match(/^([a-h]+[1-8])/) 
+        true
+      else
+        false
+      end
     end
+
+
   end
 
   def piece_validate(pieces, piece)

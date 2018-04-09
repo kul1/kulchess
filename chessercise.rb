@@ -5,6 +5,7 @@ require './lib/chess_helper'
 
 require 'pry'
 ARGV << '-h' if ARGV.empty?
+
 # This will hold the options we parse
 options = {}
 
