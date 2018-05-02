@@ -1,5 +1,5 @@
 ----
-## what is chessercise.rb ?
+## what is kulchess ?
 
 This code written in ruby 2.4.1 without any external or non-core library
 This code will give a list of all potential chess board positions the given piece could advance to, with one move, from the given position.
