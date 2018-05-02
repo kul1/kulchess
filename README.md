@@ -1,8 +1,3 @@
-# Code Exercise 1:
-
-----
-
-
 ----
 ## what is chessercise.rb ?
 
